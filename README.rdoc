@@ -1,0 +1,30 @@
+== README
+
+* Ruby version
+2.2.2
+
+* Configuration
+as per https://github.com/rspec/rspec-rails/issues/1554#issue-134479615
+
+Steps to to reproduce (using rails 4.2.5.1):
+```
+rails new fixture_file_upload
+cd fixture_file_upload
+echo "gem 'rspec-rails', '~> 3.0'" >> Gemfile
+bundle
+rails generate rspec:install
+mkdir -p spec/fixtures/files
+touch spec/fixtures/files/test.jpg
+mkdir spec/requests
+Create spec/requests/test_spec.rb with the following contents:
+
+require 'rails_helper'
+
+describe 'test', type: :request do
+  it 'tests' do
+    fixture_file_upload('test.jpg')
+  end
+end
+rake
+
+```
