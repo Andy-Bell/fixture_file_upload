@@ -1,5 +1,8 @@
 == README
 
+Originally created for a triage for an RSpec issue linked further down. This repo is now abandoned.
+
+
 * Ruby version
 2.2.2
 
